@@ -1,7 +1,7 @@
-TwoStep.NET Contributors
+TwoFactor.NET Contributors
 ========================
 
-The TwoStep.NET project accepts code contributions and pull requests.
+The TwoFactor.NET project accepts code contributions and pull requests.
 
 This page lists any code contributors to the project.
 
