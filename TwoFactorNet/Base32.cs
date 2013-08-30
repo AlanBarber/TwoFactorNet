@@ -22,7 +22,7 @@ namespace TwoFactorNet
         /// <param name="encodedData">The encoded data.</param>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public static string Decode(string encodedData)
+        public static byte[] Decode(string encodedData)
         {
             // Null/Empty check
             if (String.IsNullOrEmpty(encodedData))
@@ -65,7 +65,7 @@ namespace TwoFactorNet
                 }
             }
 
-            return Encoding.ASCII.GetString(returnBuffer);
+            return returnBuffer;
         }
 
         /// <summary>
@@ -73,10 +73,10 @@ namespace TwoFactorNet
         /// </summary>
         /// <param name="plainData">The plain data.</param>
         /// <returns></returns>
-        public static string Encode(string plainData)
+        public static string Encode(byte[] plainData)
         {
             // Null / empty string check
-            if (String.IsNullOrEmpty(plainData))
+            if (plainData == null)
                 throw new ArgumentNullException("plainData", "plainData cannot be null or empty.");
 
             // Calculate the complete encoded size of the output string from the input string

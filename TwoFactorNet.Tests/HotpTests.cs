@@ -51,7 +51,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter0()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 0;
             string expectedHotp = "755224";
@@ -65,7 +65,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter1()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 1;
             string expectedHotp = "287082";
@@ -79,7 +79,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter2()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 2;
             string expectedHotp = "359152";
@@ -93,7 +93,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter3()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 3;
             string expectedHotp = "969429";
@@ -107,7 +107,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter4()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 4;
             string expectedHotp = "338314";
@@ -121,7 +121,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter5()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 5;
             string expectedHotp = "254676";
@@ -135,7 +135,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter6()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 6;
             string expectedHotp = "287922";
@@ -149,7 +149,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter7()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 7;
             string expectedHotp = "162583";
@@ -163,7 +163,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter8()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 8;
             string expectedHotp = "399871";
@@ -177,7 +177,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateHotpWithCounter9()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 6;
             int counter = 9;
             string expectedHotp = "520489";

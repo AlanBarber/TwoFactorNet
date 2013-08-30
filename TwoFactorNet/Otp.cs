@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,16 +9,16 @@ namespace TwoFactorNet
     /// </summary>
     public abstract class Otp
     {
-        public string Secret { get; set; }
+        public byte[] Secret { get; set; }
         public long PasswordSize { get; set; }
 
         protected Otp()
         {
-            Secret = string.Empty;
+            Secret = new byte[0];
             PasswordSize = 6;
         }
 
-        protected Otp(string secret, int passwordSize)
+        protected Otp(byte[] secret, int passwordSize)
         {
             Secret = secret;
             PasswordSize = passwordSize;
@@ -38,7 +37,8 @@ namespace TwoFactorNet
         /// <returns></returns>
         protected internal long CalculatePassword(long seed)
         {
-            byte[] encodedSecretBytes = Encoding.ASCII.GetBytes(Secret);
+            //byte[] encodedSecretBytes = Encoding.ASCII.GetBytes(Secret);
+            byte[] encodedSecretBytes = Secret;
             byte[] seedBytes = BitConverter.GetBytes(seed);
             Array.Reverse(seedBytes);
 

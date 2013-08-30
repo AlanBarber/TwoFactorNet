@@ -40,7 +40,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateTotpWithTime59()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "94287082";
@@ -55,7 +55,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateTotpWithTime1111111109()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "07081804";
@@ -70,7 +70,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateTotpWithTime1111111111()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "14050471";
@@ -85,7 +85,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void GenerateTotpWithTime1234567890()
         {
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "89005924";
@@ -101,7 +101,7 @@ namespace TwoFactorNet.Tests
         public void GenerateTotpWithTime2000000000()
         {
 
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "69279037";
@@ -117,7 +117,7 @@ namespace TwoFactorNet.Tests
         public void GenerateTotpWithTime20000000000()
         {
 
-            string secret = "12345678901234567890";
+            byte[] secret = System.Text.Encoding.ASCII.GetBytes("12345678901234567890");
             int passwordSize = 8;
             int timeInterval = 30;
             string expectedTotp = "65353130";

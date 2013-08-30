@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace TwoFactorNet
 {
@@ -8,9 +7,9 @@ namespace TwoFactorNet
     /// </summary>
     public class Hotp : Otp
     {
-        public Hotp() : base() {}
+        public Hotp() {}
         
-        public Hotp(string secret, int passwordSize) : base(secret,passwordSize){}
+        public Hotp(byte[] secret, int passwordSize) : base(secret,passwordSize){}
 
 
         /// <summary>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-
-namespace TwoFactorNet
+﻿namespace TwoFactorNet
 {
     /// <summary>
     /// Implementation of Time-Based One-Time Password (RFC 6238)
@@ -10,17 +7,17 @@ namespace TwoFactorNet
     {
         public int TimeInterval { get; set; }
         
-        public Totp() : base()
+        public Totp()
         {
             TimeInterval = 30;
         }
         
-        public Totp(string secret, int passwordSize) : base(secret, passwordSize)
+        public Totp(byte[] secret, int passwordSize) : base(secret, passwordSize)
         {
             TimeInterval = 30;
         }        
 
-        public Totp(string secret, int passwordSize, int timeInterval) : base(secret, passwordSize)
+        public Totp(byte[] secret, int passwordSize, int timeInterval) : base(secret, passwordSize)
         {
             TimeInterval = timeInterval;
         }

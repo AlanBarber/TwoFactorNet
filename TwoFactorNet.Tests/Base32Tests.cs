@@ -9,7 +9,7 @@ namespace TwoFactorNet.Tests
         [TestMethod]
         public void EncodeHelloWorldToBase32()
         {
-            string plainText = "Hello, World!";
+            byte[] plainText = System.Text.Encoding.ASCII.GetBytes("Hello, World!");
             string encodedText = "JBSWY3DPFQQFO33SNRSCC===";
 
             string val = Base32.Encode(plainText) ;
@@ -29,19 +29,19 @@ namespace TwoFactorNet.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void EncodeThrowsArgumentNullExceptionOnEmptyData()
         {
-            Base32.Encode(String.Empty);
+            Base32.Encode(null);
             Assert.Fail("Expected ArgumentNullException, no exception was thrown.");
         }
 
         [TestMethod]
         public void DecodeBase32ToHelloWorld()
         {
-            string plainText = "Hello, World!";
+            byte[] plainText = System.Text.Encoding.ASCII.GetBytes("Hello, World!");
             string encodedText = "JBSWY3DPFQQFO33SNRSCC===";
 
-            string val = Base32.Decode(encodedText);
+            byte[] val = Base32.Decode(encodedText);
 
-            Assert.AreEqual(plainText, val);
+            CollectionAssert.AreEqual(plainText, val);
         }
 
         [TestMethod]
