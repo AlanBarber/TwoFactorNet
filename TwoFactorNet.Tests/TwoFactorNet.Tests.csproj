@@ -54,6 +54,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HotpTests.cs" />
     <Compile Include="TotpTests.cs" />
+    <Compile Include="KeyUriTests.cs" />
+    <Compile Include="UnixTimeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TwoFactorNet\TwoFactorNet.csproj">

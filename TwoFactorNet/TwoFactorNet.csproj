@@ -32,17 +32,22 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base32.cs" />
+    <Compile Include="Encoding\Base32.cs" />
+    <Compile Include="Generator\KeyUri.cs" />
     <Compile Include="Hotp.cs" />
+    <Compile Include="Generator\RandomKey.cs" />
     <Compile Include="Otp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Time\TimeHelper.cs" />
+    <Compile Include="Time\UnixTime.cs" />
     <Compile Include="Totp.cs" />
+    <Compile Include="Validation\HotpValidator.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\TotpValidator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

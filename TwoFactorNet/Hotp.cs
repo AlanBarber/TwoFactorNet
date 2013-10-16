@@ -11,7 +11,6 @@ namespace TwoFactorNet
         
         public Hotp(byte[] secret, int passwordSize) : base(secret,passwordSize){}
 
-
         /// <summary>
         /// Generates a HMAC-Based One-Time Password for a given counter value.
         /// </summary>

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 
-namespace TwoFactorNet
+namespace TwoFactorNet.Encoding
 {
     /// <summary>
     /// Base32 Encoder/Decoder based upon RFC 3548/4648 
@@ -115,7 +114,7 @@ namespace TwoFactorNet
                 returnBuffer[index++] = (byte)Padding;
             }
 
-            return Encoding.ASCII.GetString(returnBuffer);
+            return System.Text.Encoding.ASCII.GetString(returnBuffer);
         }
 
         

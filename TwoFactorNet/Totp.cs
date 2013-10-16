@@ -33,9 +33,5 @@
             long intervalTimestamp = timestamp / TimeInterval;
             return CalculatePassword(intervalTimestamp).ToString("D" + PasswordSize);
         }
-
-
-
-
     }
 }

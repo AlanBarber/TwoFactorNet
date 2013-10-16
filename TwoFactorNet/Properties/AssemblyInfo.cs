@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TwoFactorNet")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("TwoFactor.NET is a library that provides support for the creation and use of One Time Passwords using the HOTP (HMAC One Time Password) and TOTP (Time Based One Time Password) algorithms.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("TwoFactorNet")]
 [assembly: AssemblyProduct("TwoFactorNet")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]

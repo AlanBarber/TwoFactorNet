@@ -73,7 +73,7 @@
             this.groupBox2.Size = new System.Drawing.Size(275, 48);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Secret Key";
+            this.groupBox2.Text = "Secret Key (Base32 Encoded)";
             // 
             // lblSecretKey
             // 
