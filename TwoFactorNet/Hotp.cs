@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace TwoFactorNet
+﻿namespace TwoFactorNet
 {
     /// <summary>
     /// Implementation of HMAC-Based One-Time Password (RFC 4226)
@@ -9,7 +7,7 @@ namespace TwoFactorNet
     {
         public Hotp() {}
         
-        public Hotp(byte[] secret, int passwordSize) : base(secret,passwordSize){}
+        public Hotp(byte[] secretKey, int passwordSize) : base(secretKey, passwordSize){}
 
         /// <summary>
         /// Generates a HMAC-Based One-Time Password for a given counter value.
@@ -18,7 +16,7 @@ namespace TwoFactorNet
         /// <returns></returns>
         public override string GeneratePassword(long counter)
         {
-            return CalculatePassword(counter).ToString(CultureInfo.InvariantCulture);
+            return CalculatePassword(counter).ToString("D" + PasswordSize);
         }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="HotpTests.cs" />
     <Compile Include="TotpTests.cs" />
     <Compile Include="KeyUriTests.cs" />
+    <Compile Include="TimeHelperTests.cs" />
     <Compile Include="UnixTimeTests.cs" />
   </ItemGroup>
   <ItemGroup>

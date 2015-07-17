@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Globalization;
-using System.Web.Security;
 
 namespace TwoFactorNet.ExampleWeb.Models
 {
@@ -93,5 +89,13 @@ namespace TwoFactorNet.ExampleWeb.Models
         public string Provider { get; set; }
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
+    }
+
+    public class TwoFactorAuthenticationModel
+    {
+        [Required]
+        [StringLength(6, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Enter Code")]
+        public string ValidationCode { get; set; }
     }
 }

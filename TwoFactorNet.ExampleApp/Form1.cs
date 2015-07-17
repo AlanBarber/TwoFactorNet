@@ -35,14 +35,14 @@ namespace TwoFactorNet.ExampleApp
             // get qrcode
             IBarcodeWriter barcodeWriter = new BarcodeWriter
             {
-                                               Format = BarcodeFormat.QR_CODE,
-                                               Options = new QrCodeEncodingOptions
-                                               {
-                                                   Width = 250,
-                                                   Height = 250,
-                                                   Margin = 1
-                                               }
-                                           };
+                Format = BarcodeFormat.QR_CODE,
+                Options = new QrCodeEncodingOptions
+                {
+                    Width = 250,
+                    Height = 250,
+                    Margin = 1
+                }
+            };
             pbQRCode.Image = new Bitmap(barcodeWriter.Write(KeyUri.GetToptUri("TwoFactorNet", "TestUser", _encodedKey)));
 
             // generate code
@@ -50,7 +50,7 @@ namespace TwoFactorNet.ExampleApp
             lblCurrentVerificationCode.Text = totp.GeneratePassword(UnixTime.GetUnixTime());
 
             // get next cycle time
-            _nextCycleTime = TimeHelper.GetNextCycleTime();
+            _nextCycleTime = TimeHelper.GetNextCycleTimeUtc();
 
             // move progressbar to correct value
             pbCurrentVerificationCode.Value = (_nextCycleTime.Second == 0 ? 60 - DateTime.Now.Second : DateTime.Now.Second);
@@ -65,9 +65,9 @@ namespace TwoFactorNet.ExampleApp
             pbCurrentVerificationCode.PerformStep();
 
             // check time to see if we need to cycle
-            if (DateTime.Now >= _nextCycleTime)
+            if (DateTime.UtcNow >= _nextCycleTime)
             {
-                _nextCycleTime = TimeHelper.GetNextCycleTime();
+                _nextCycleTime = TimeHelper.GetNextCycleTimeUtc();
                 var totp = new Totp(_secretKey, 6, 30);
                 lblCurrentVerificationCode.Text = totp.GeneratePassword(UnixTime.GetUnixTime());
                 pbCurrentVerificationCode.Value = 0;

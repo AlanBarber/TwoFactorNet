@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TwoFactorNet.ExampleWeb")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Grange Insurance")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TwoFactorNet.ExampleWeb")]
-[assembly: AssemblyCopyright("Copyright © Grange Insurance 2013")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1bd61031-7fd8-43f3-ba21-d1847aa3aa9d")]
+[assembly: Guid("82ea9a04-c730-4049-8f7a-9d6757d971ec")]
 
 // Version information for an assembly consists of the following four values:
 //

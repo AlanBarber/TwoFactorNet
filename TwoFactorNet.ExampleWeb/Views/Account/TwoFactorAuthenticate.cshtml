@@ -1,0 +1,32 @@
+﻿@model TwoFactorNet.ExampleWeb.Models.TwoFactorAuthenticationModel
+
+@{
+    ViewBag.Title = "Enter Security Code to Continue";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+    <h3>Please enter the securitry code from your< strong>code generator</strong> below.</h3>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Two Factor Authentication Form</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.ValidationCode)
+                    @Html.TextBoxFor(m => m.ValidationCode)
+                    @Html.ValidationMessageFor(m => m.ValidationCode)
+                </li>
+            </ol>
+            <input type="submit" value="Continue" />
+        </fieldset>
+        <p>
+            @Html.ActionLink("Having Trouble?", "Register")
+        </p>
+    }
+</section>

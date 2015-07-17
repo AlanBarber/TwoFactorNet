@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
@@ -37,11 +36,35 @@ namespace TwoFactorNet.ExampleWeb.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                if (true)
+                {
+                    return RedirectToAction("TwoFactorAuthenticate");
+                }
                 return RedirectToLocal(returnUrl);
             }
 
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            return View(model);
+        }
+
+        // 
+        // GET: Account/TwoFactorAuthenticate
+
+        //public ActionResult TwoFactorAuthenticate(string returnUrl)
+        //{
+        //    return View();
+        //}
+
+        //
+        // POST: Account/TwoFactorAuthenticate
+
+        public ActionResult TwoFactorAuthenticate(TwoFactorAuthenticationModel model, string returnUrl)
+        {
+            if (ModelState.IsValid && true)
+            {
+                return RedirectToLocal(returnUrl);
+            }
             return View(model);
         }
 

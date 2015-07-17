@@ -8,19 +8,28 @@ namespace TwoFactorNet
     /// </summary>
     public abstract class Otp
     {
-        public byte[] Secret { get; set; }
+        private byte[] _secretKey;
         public long PasswordSize { get; set; }
 
         protected Otp()
         {
-            Secret = new byte[0];
+            _secretKey = new byte[0];
             PasswordSize = 6;
         }
 
-        protected Otp(byte[] secret, int passwordSize)
+        protected Otp(byte[] secretKey, int passwordSize)
         {
-            Secret = secret;
+            _secretKey = secretKey;
             PasswordSize = passwordSize;
+        }
+
+        /// <summary>
+        /// Sets the secret key.
+        /// </summary>
+        /// <param name="secretKey">The secret key.</param>
+        public void SetSecretKey(byte[] secretKey)
+        {
+            _secretKey = secretKey;
         }
 
         /// <summary>
@@ -46,7 +55,7 @@ namespace TwoFactorNet
                 Array.Reverse(seedBytes);
 
             // get a generator and compute a 20 byte HMAC-SHA1 hash from key + seed (normally a counter or time)
-            HMAC hashGenerator = new HMACSHA1(Secret);
+            HMAC hashGenerator = new HMACSHA1(_secretKey);
             byte[] calculatedHash = hashGenerator.ComputeHash(seedBytes);
 
             // using the last byte in the raw hash, mask it to grab the last 4 bits of this byte (basically a random number 0 (0000) - 15 (1111))
